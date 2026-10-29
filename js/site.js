@@ -69,8 +69,8 @@
     var ctx = canvas.getContext("2d");
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var SPACING = 14;
-    var OFFSET_X = 5;
-    var OFFSET_Y = 24;
+    var OFFSET_X = 0;
+    var OFFSET_Y = 0;
     var HOLD = 90;
     var path = [];
     var shown = 0;
