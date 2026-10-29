@@ -70,9 +70,9 @@
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var dots = [];
     var mx = 0, my = 0, lx = null, ly = null, speed = 0, lastMove = 0, running = false;
-    var SPACING = 9;
-    var OFFSET_X = 3;
-    var OFFSET_Y = 20;
+    var SPACING = 14;
+    var OFFSET_X = 0;
+    var OFFSET_Y = 0;
     var HOLD = 90;
 
     function fit() {
@@ -101,7 +101,7 @@
         speed *= 0.8;
       }
 
-      var limit = Math.max(3, Math.min(28, 3 + speed * 0.7));
+      var limit = Math.max(3, Math.min(20, 3 + speed * 0.5));
       var extra = dots.length - limit;
       if (moving) {
         if (extra > 0) dots.splice(0, Math.min(extra, steps + 1));
@@ -117,13 +117,18 @@
       ctx.fillStyle = "rgba(205, 215, 255, 0.45)";
       var n = dots.length;
       for (var j = 0; j < n; j++) {
-        var t = (j + 1) / n;
         ctx.beginPath();
-        ctx.arc(dots[j].x + OFFSET_X, dots[j].y + OFFSET_Y, 1.1 + t * 2.4, 0, Math.PI * 2);
+        ctx.arc(dots[j].x + OFFSET_X, dots[j].y + OFFSET_Y, 2.4, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      if (n > 0 || speed > 0.2) {
+      if (moving) {
+        ctx.beginPath();
+        ctx.arc(mx + OFFSET_X, my + OFFSET_Y, 2.4, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      if (n > 0 || moving) {
         requestAnimationFrame(tick);
       } else {
         running = false;
