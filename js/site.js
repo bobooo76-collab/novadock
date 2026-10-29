@@ -69,8 +69,11 @@
     var ctx = canvas.getContext("2d");
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
     var dots = [];
-    var mx = 0, my = 0, lx = null, ly = null, speed = 0, moved = false, running = false;
+    var mx = 0, my = 0, lx = null, ly = null, speed = 0, lastMove = 0, running = false;
     var SPACING = 9;
+    var OFFSET_X = 3;
+    var OFFSET_Y = 20;
+    var HOLD = 90;
 
     function fit() {
       canvas.width = Math.round(window.innerWidth * dpr);
@@ -80,7 +83,8 @@
 
     function tick() {
       var steps = 0;
-      if (moved && lx !== null) {
+      var moving = performance.now() - lastMove < HOLD;
+      if (moving && lx !== null) {
         var dx = mx - lx, dy = my - ly;
         var dist = Math.sqrt(dx * dx + dy * dy);
         speed = speed * 0.7 + dist * 0.3;
@@ -97,14 +101,13 @@
         speed *= 0.8;
       }
 
-      var limit = Math.max(4, Math.min(44, 4 + speed * 1.1));
+      var limit = Math.max(3, Math.min(28, 3 + speed * 0.7));
       var extra = dots.length - limit;
-      if (moved) {
+      if (moving) {
         if (extra > 0) dots.splice(0, Math.min(extra, steps + 1));
       } else if (dots.length) {
         dots.splice(0, Math.max(1, Math.ceil(dots.length * 0.08)));
       }
-      moved = false;
 
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       ctx.shadowColor = "rgba(10, 8, 40, 0.55)";
@@ -116,7 +119,7 @@
       for (var j = 0; j < n; j++) {
         var t = (j + 1) / n;
         ctx.beginPath();
-        ctx.arc(dots[j].x, dots[j].y, 1.4 + t * 5.6, 0, Math.PI * 2);
+        ctx.arc(dots[j].x + OFFSET_X, dots[j].y + OFFSET_Y, 1.1 + t * 2.4, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -137,13 +140,13 @@
         lx = mx;
         ly = my;
       }
-      moved = true;
+      lastMove = performance.now();
       if (!running) {
         running = true;
         requestAnimationFrame(tick);
       }
     }, { passive: true });
-    document.addEventListener("mouseleave", function () { moved = false; });
+    document.addEventListener("mouseleave", function () { lastMove = 0; });
     fit();
   }
 
