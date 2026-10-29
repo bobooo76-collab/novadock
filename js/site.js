@@ -68,12 +68,16 @@
   if (canvas && !reduce && !coarse && canvas.getContext) {
     var ctx = canvas.getContext("2d");
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var dots = [];
-    var mx = 0, my = 0, lx = null, ly = null, speed = 0, lastMove = 0, running = false;
     var SPACING = 14;
-    var OFFSET_X = 0;
-    var OFFSET_Y = 0;
+    var OFFSET_X = 5;
+    var OFFSET_Y = 24;
     var HOLD = 90;
+    var path = [];
+    var shown = 0;
+    var speed = 0;
+    var accum = 0;
+    var lastMove = 0;
+    var running = false;
 
     function fit() {
       canvas.width = Math.round(window.innerWidth * dpr);
@@ -81,70 +85,81 @@
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
+    function trim(maxLength) {
+      var total = 0;
+      for (var i = path.length - 1; i > 0; i--) {
+        total += Math.hypot(path[i].x - path[i - 1].x, path[i].y - path[i - 1].y);
+        if (total > maxLength) {
+          path.splice(0, i - 1);
+          return;
+        }
+      }
+    }
+
+    function pointAt(distance) {
+      var remaining = distance;
+      for (var i = path.length - 1; i > 0; i--) {
+        var a = path[i], b = path[i - 1];
+        var seg = Math.hypot(a.x - b.x, a.y - b.y);
+        if (remaining <= seg) {
+          var t = seg === 0 ? 0 : remaining / seg;
+          return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t };
+        }
+        remaining -= seg;
+      }
+      return null;
+    }
+
     function tick() {
-      var steps = 0;
       var moving = performance.now() - lastMove < HOLD;
-      if (moving && lx !== null) {
-        var dx = mx - lx, dy = my - ly;
-        var dist = Math.sqrt(dx * dx + dy * dy);
-        speed = speed * 0.7 + dist * 0.3;
-        var count = Math.floor(dist / SPACING);
-        for (var i = 1; i <= count; i++) {
-          dots.push({ x: lx + dx * i / count, y: ly + dy * i / count });
-        }
-        if (count > 0) {
-          lx = lx + dx * (count * SPACING / dist);
-          ly = ly + dy * (count * SPACING / dist);
-        }
-        steps = count;
+      speed = speed * 0.7 + accum * 0.3;
+      accum = 0;
+
+      var target = Math.max(3, Math.min(20, 3 + speed * 0.5));
+      if (moving) {
+        shown += (target - shown) * 0.25;
       } else {
-        speed *= 0.8;
+        shown -= Math.max(0.3, shown * 0.1);
+        if (shown < 0) shown = 0;
       }
 
-      var limit = Math.max(3, Math.min(20, 3 + speed * 0.5));
-      var extra = dots.length - limit;
-      if (moving) {
-        if (extra > 0) dots.splice(0, Math.min(extra, steps + 1));
-      } else if (dots.length) {
-        dots.splice(0, Math.max(1, Math.ceil(dots.length * 0.08)));
-      }
+      var count = Math.floor(shown + 0.5);
+      trim((count + 2) * SPACING);
 
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-      ctx.shadowColor = "rgba(10, 8, 40, 0.55)";
-      ctx.shadowBlur = 9;
-      ctx.shadowOffsetX = 0;
-      ctx.shadowOffsetY = 3;
-      ctx.fillStyle = "rgba(205, 215, 255, 0.45)";
-      var n = dots.length;
-      for (var j = 0; j < n; j++) {
-        ctx.beginPath();
-        ctx.arc(dots[j].x + OFFSET_X, dots[j].y + OFFSET_Y, 2.4, 0, Math.PI * 2);
-        ctx.fill();
+      if (count > 0 && path.length > 0) {
+        ctx.shadowColor = "rgba(10, 8, 40, 0.55)";
+        ctx.shadowBlur = 9;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 3;
+        ctx.fillStyle = "rgba(205, 215, 255, 0.45)";
+        for (var k = 0; k < count; k++) {
+          var p = k === 0 ? path[path.length - 1] : pointAt(k * SPACING);
+          if (!p) break;
+          ctx.beginPath();
+          ctx.arc(p.x + OFFSET_X, p.y + OFFSET_Y, 2.4, 0, Math.PI * 2);
+          ctx.fill();
+        }
       }
 
-      if (moving) {
-        ctx.beginPath();
-        ctx.arc(mx + OFFSET_X, my + OFFSET_Y, 2.4, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      if (n > 0 || moving) {
+      if (moving || count > 0) {
         requestAnimationFrame(tick);
       } else {
         running = false;
-        lx = null;
-        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        path = [];
+        shown = 0;
       }
     }
 
     window.addEventListener("resize", fit);
     window.addEventListener("pointermove", function (e) {
-      mx = e.clientX;
-      my = e.clientY;
-      if (lx === null) {
-        lx = mx;
-        ly = my;
+      var last = path.length ? path[path.length - 1] : null;
+      if (last) {
+        var d = Math.hypot(e.clientX - last.x, e.clientY - last.y);
+        if (d < 1) return;
+        accum += d;
       }
+      path.push({ x: e.clientX, y: e.clientY });
       lastMove = performance.now();
       if (!running) {
         running = true;
