@@ -67,6 +67,28 @@ window.I18N.en = {
   "s6.l3": "Pauses automatically when you switch away",
   "s6.alt": "The games window",
 
+  "f16.t": "Prayer & Bible",
+  "f16.d": "Gentle reminders at the times you choose to read the Bible and pray, with reading plans, a daily verse and a streak counter.",
+  "f17.t": "Visual widget picker",
+  "f17.d": "Browse every widget in a window that shows how each one really looks, and add it to the dock, the desktop or the shared panel with one click.",
+
+  "s7.eyebrow": "Prayer & Bible",
+  "s7.title": "Make room for prayer and the Word",
+  "s7.p": "Choose the times you want to read the Bible and how many times a day you want to pray, and Nova Dock reminds you gently — with a Bible verse in the reminder, a reading plan and a quiet-time timer.",
+  "s7.l1": "You pick the times, and how many prayer reminders you want each day",
+  "s7.l2": "Reading plans: New Testament in 90 days, Psalms and Proverbs, or the whole Bible in a year",
+  "s7.l3": "Verses in 10 languages, shown in the reminder",
+  "s7.l4": "Streak counters and a quiet-time timer",
+  "s7.alt": "The Prayer and Bible window",
+
+  "s8.eyebrow": "Widgets",
+  "s8.title": "See it before you add it",
+  "s8.p": "The widget picker shows every widget exactly as it will look on your dock — live, with your real time, weather, disk space and system load. Click one and it is added.",
+  "s8.l1": "Live previews of every widget",
+  "s8.l2": "Add to the dock, the desktop or the shared panel",
+  "s8.l3": "Stays open so you can add several in a row",
+  "s8.alt": "The widget picker",
+
   "s1.eyebrow": "All Programs",
   "s1.title": "Every program, one click away",
   "s1.p": "The nine-dot button opens a beautiful launcher. Search as you type, switch between a grid and a list, and right-click to pin anything to the dock.",
