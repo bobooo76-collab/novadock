@@ -48,6 +48,25 @@ window.I18N.en = {
   "f14.t": "Reminders",
   "f14.d": "Gentle nudges to drink water, stand up and rest your eyes — with a glass counter, working hours and snooze.",
 
+  "f15.t": "Games",
+  "f15.d": "Eight mini games to unwind — Snake, 2048, Tetris, Minesweeper, Memory, Tic-tac-toe, Connect Four and Breakout — with three difficulty levels.",
+
+  "s5.eyebrow": "AI chats",
+  "s5.title": "Ask any AI, straight from the dock",
+  "s5.p": "Type a question, pick ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok or DeepSeek, and it opens in your browser with the question ready. Add any other chat with just a name and a web address.",
+  "s5.l1": "Question pre-filled in ChatGPT, Claude, Copilot, Perplexity and Grok — copied for Gemini and DeepSeek",
+  "s5.l2": "Opens in your own browser, where you are already signed in",
+  "s5.l3": "Add your own chats with a name and an address",
+  "s5.alt": "The AI chats window",
+
+  "s6.eyebrow": "Games",
+  "s6.title": "Take a break with 8 mini games",
+  "s6.p": "A game window is one click away: Snake, 2048, Tetris, Minesweeper, Memory, Tic-tac-toe, Connect Four and Breakout. Pick your difficulty, play, and close the window whenever you like.",
+  "s6.l1": "Easy, Medium and Hard levels in every game",
+  "s6.l2": "Your best scores are saved",
+  "s6.l3": "Pauses automatically when you switch away",
+  "s6.alt": "The games window",
+
   "s1.eyebrow": "All Programs",
   "s1.title": "Every program, one click away",
   "s1.p": "The nine-dot button opens a beautiful launcher. Search as you type, switch between a grid and a list, and right-click to pin anything to the dock.",
