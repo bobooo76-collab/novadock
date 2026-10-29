@@ -72,11 +72,17 @@
     var OFFSET_X = 0;
     var OFFSET_Y = 0;
     var HOLD = 90;
+    var FADE = 6;
     var path = [];
     var shown = 0;
     var speed = 0;
     var accum = 0;
     var lastMove = 0;
+    var lastReal = null;
+    var prevT = 0;
+    var vx = 0;
+    var vy = 0;
+    var LEAD = 30;
     var running = false;
 
     function fit() {
@@ -112,6 +118,9 @@
 
     function tick() {
       var moving = performance.now() - lastMove < HOLD;
+      if (!moving && lastReal && path.length) {
+        path[path.length - 1] = { x: lastReal.x, y: lastReal.y };
+      }
       speed = speed * 0.7 + accum * 0.3;
       accum = 0;
 
@@ -136,10 +145,13 @@
         for (var k = 0; k < count; k++) {
           var p = k === 0 ? path[path.length - 1] : pointAt(k * SPACING);
           if (!p) break;
+          var fromTail = count - 1 - k;
+          ctx.globalAlpha = fromTail < FADE ? (fromTail + 1) / (FADE + 1) : 1;
           ctx.beginPath();
           ctx.arc(p.x + OFFSET_X, p.y + OFFSET_Y, 2.4, 0, Math.PI * 2);
           ctx.fill();
         }
+        ctx.globalAlpha = 1;
       }
 
       if (moving || count > 0) {
@@ -153,13 +165,34 @@
 
     window.addEventListener("resize", fit);
     window.addEventListener("pointermove", function (e) {
+      var now = performance.now();
+      var dt = Math.max(1, now - prevT);
+      if (lastReal && dt < 120) {
+        vx = vx * 0.6 + ((e.clientX - lastReal.x) / dt) * 0.4;
+        vy = vy * 0.6 + ((e.clientY - lastReal.y) / dt) * 0.4;
+      } else {
+        vx = 0;
+        vy = 0;
+      }
+      prevT = now;
+      var d0 = lastReal ? Math.hypot(e.clientX - lastReal.x, e.clientY - lastReal.y) : 0;
+      lastReal = { x: e.clientX, y: e.clientY };
+
+      var ax = vx * LEAD, ay = vy * LEAD;
+      var al = Math.hypot(ax, ay);
+      if (al > 40) {
+        ax = ax * 40 / al;
+        ay = ay * 40 / al;
+      }
+      var px = e.clientX + ax, py = e.clientY + ay;
+
       var last = path.length ? path[path.length - 1] : null;
       if (last) {
-        var d = Math.hypot(e.clientX - last.x, e.clientY - last.y);
+        var d = Math.hypot(px - last.x, py - last.y);
         if (d < 1) return;
-        accum += d;
+        accum += d0 || d;
       }
-      path.push({ x: e.clientX, y: e.clientY });
+      path.push({ x: px, y: py });
       lastMove = performance.now();
       if (!running) {
         running = true;

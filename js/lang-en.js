@@ -43,6 +43,11 @@ window.I18N.en = {
   "f12.t": "Backup & portable",
   "f12.d": "Settings live in one folder and can be mirrored to a cloud folder for automatic backup.",
 
+  "f13.t": "AI chats, one click away",
+  "f13.d": "Ask ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok or DeepSeek right from the dock: type a question, pick a chat and go. Add your own chats too.",
+  "f14.t": "Reminders",
+  "f14.d": "Gentle nudges to drink water, stand up and rest your eyes — with a glass counter, working hours and snooze.",
+
   "s1.eyebrow": "All Programs",
   "s1.title": "Every program, one click away",
   "s1.p": "The nine-dot button opens a beautiful launcher. Search as you type, switch between a grid and a list, and right-click to pin anything to the dock.",
