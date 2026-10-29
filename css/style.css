@@ -26,15 +26,77 @@ body {
   overflow-x: hidden;
 }
 
-body::before {
-  content: "";
+.bg {
   position: fixed;
   inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bg i {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(30px);
+  will-change: transform;
+}
+
+.bg i:nth-child(1) {
+  width: 62vmax; height: 62vmax; left: -18vmax; top: -22vmax;
+  background: radial-gradient(circle at center, rgba(66, 72, 170, 0.5) 0%, rgba(66, 72, 170, 0.22) 38%, transparent 70%);
+  animation: drift1 70s ease-in-out infinite alternate;
+}
+
+.bg i:nth-child(2) {
+  width: 56vmax; height: 56vmax; right: -16vmax; top: 4vmax;
+  background: radial-gradient(circle at center, rgba(112, 62, 160, 0.46) 0%, rgba(112, 62, 160, 0.2) 38%, transparent 70%);
+  animation: drift2 86s ease-in-out infinite alternate;
+}
+
+.bg i:nth-child(3) {
+  width: 60vmax; height: 60vmax; left: 12vmax; bottom: -30vmax;
+  background: radial-gradient(circle at center, rgba(28, 108, 122, 0.42) 0%, rgba(28, 108, 122, 0.18) 38%, transparent 70%);
+  animation: drift3 78s ease-in-out infinite alternate;
+}
+
+.bg i:nth-child(4) {
+  width: 44vmax; height: 44vmax; right: 6vmax; bottom: -14vmax;
+  background: radial-gradient(circle at center, rgba(40, 82, 170, 0.4) 0%, rgba(40, 82, 170, 0.17) 40%, transparent 70%);
+  animation: drift4 94s ease-in-out infinite alternate;
+}
+
+.bg i:nth-child(5) {
+  width: 36vmax; height: 36vmax; left: 38vmax; top: 30vh;
+  background: radial-gradient(circle at center, rgba(94, 52, 130, 0.32) 0%, rgba(94, 52, 130, 0.14) 40%, transparent 70%);
+  animation: drift5 104s ease-in-out infinite alternate;
+}
+
+@keyframes drift1 { from { transform: translate(0, 0) scale(1); } to { transform: translate(18vmax, 14vmax) scale(1.18); } }
+@keyframes drift2 { from { transform: translate(0, 0) scale(1.1); } to { transform: translate(-20vmax, 18vmax) scale(0.92); } }
+@keyframes drift3 { from { transform: translate(0, 0) scale(1); } to { transform: translate(22vmax, -12vmax) scale(1.2); } }
+@keyframes drift4 { from { transform: translate(0, 0) scale(1.12); } to { transform: translate(-16vmax, -18vmax) scale(0.9); } }
+@keyframes drift5 { from { transform: translate(-10vmax, 0) scale(0.95); } to { transform: translate(14vmax, 10vmax) scale(1.2); } }
+
+.cursor-glow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 520px;
+  height: 520px;
+  margin: -260px 0 0 -260px;
   z-index: -1;
-  background:
-    radial-gradient(900px 600px at 12% -5%, rgba(109, 141, 255, 0.22), transparent 60%),
-    radial-gradient(800px 560px at 95% 8%, rgba(176, 124, 255, 0.18), transparent 60%),
-    radial-gradient(900px 700px at 50% 110%, rgba(79, 209, 197, 0.10), transparent 60%);
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(130, 150, 255, 0.13) 0%, rgba(150, 110, 255, 0.07) 38%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  will-change: transform;
+}
+
+.cursor-glow.on { opacity: 1; }
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow { display: none; }
 }
 
 img { max-width: 100%; display: block; }
@@ -189,5 +251,7 @@ footer { border-top: 1px solid var(--card-border); padding: 34px 0 44px; color: 
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .bg i { animation: none; }
+  .cursor-glow { display: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }

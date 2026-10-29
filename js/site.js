@@ -62,6 +62,35 @@
     items.forEach(function (el) { el.classList.add("in"); });
   }
 
+  var glow = document.querySelector(".cursor-glow");
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (glow && !reduce) {
+    var tx = window.innerWidth / 2, ty = window.innerHeight / 3, x = tx, y = ty, running = false;
+
+    function frame() {
+      x += (tx - x) * 0.12;
+      y += (ty - y) * 0.12;
+      glow.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
+      if (Math.abs(tx - x) > 0.4 || Math.abs(ty - y) > 0.4) {
+        requestAnimationFrame(frame);
+      } else {
+        running = false;
+      }
+    }
+
+    window.addEventListener("pointermove", function (e) {
+      tx = e.clientX;
+      ty = e.clientY;
+      glow.classList.add("on");
+      if (!running) {
+        running = true;
+        requestAnimationFrame(frame);
+      }
+    }, { passive: true });
+
+    document.addEventListener("mouseleave", function () { glow.classList.remove("on"); });
+  }
+
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 })();
