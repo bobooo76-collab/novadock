@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nova Dock — A dock that makes Windows feel alive</title>
+<meta name="description" content="Nova Dock is a fast, beautiful and endlessly customizable dock for Windows 10 and 11 with live widgets, window previews, folder fans and an All Programs launcher.">
+<meta name="theme-color" content="#090b12">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-1 1.6-2.1-.4-1.1.3-2.4 1.6-2.4H17a4 4 0 0 0 4-4c0-5-4-9.5-9-9.5z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10.5" cy="7" r="1"/><circle cx="15.5" cy="7.5" r="1"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2.4 5.6L20 11l-5.6 2.4L12 19l-2.4-5.6L4 11l5.6-2.4z"/><path d="M19 3v4M17 5h4"/></symbol>
+    <symbol id="i-hide" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 10h10"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-widgets" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><circle cx="17" cy="17" r="4"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-recent" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="5" cy="5" r="1.6"/><circle cx="12" cy="5" r="1.6"/><circle cx="19" cy="5" r="1.6"/><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/><circle cx="5" cy="19" r="1.6"/><circle cx="12" cy="19" r="1.6"/><circle cx="19" cy="19" r="1.6"/></symbol>
+    <symbol id="i-docks" viewBox="0 0 24 24"><rect x="3" y="14" width="18" height="6" rx="3"/><rect x="6" y="5" width="12" height="6" rx="3"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4.6 12 4 4 0 0 0 6 19z"/></symbol>
+    <symbol id="i-windows" viewBox="0 0 24 24"><path d="M3 5.5l8-1.1v7.1H3zM13 4.2l8-1.2v8.5h-8zM3 12.5h8v7.1l-8-1.1zM13 12.5h8V21l-8-1.2z"/></symbol>
+  </defs>
+</svg>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/icon.png" alt="Nova Dock"> Nova Dock</a>
+    <div class="links">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#widgets" data-i18n="nav.widgets">Widgets</a>
+      <a href="#get" data-i18n="nav.get">Get it</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" class="on">EN</button>
+      <button type="button" data-lang="bg">BG</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="chips">
+      <span class="chip" data-i18n="hero.chip1">Windows 10 &amp; 11</span>
+      <span class="chip" data-i18n="hero.chip2">Light &amp; fast</span>
+      <span class="chip" data-i18n="hero.chip3">English &amp; Български</span>
+    </div>
+    <h1 data-i18n-html="hero.title">A dock that makes <span class="grad">Windows feel alive</span></h1>
+    <p class="lead" data-i18n="hero.lead">Nova Dock is a fast, beautiful and endlessly customizable dock for Windows. Launch apps, glance at live widgets, preview windows and keep everything organized — with smooth animations and a style that is entirely yours.</p>
+    <div class="cta">
+      <span class="btn soon" id="store" aria-disabled="true"><svg class="i"><use href="#i-windows"/></svg><span data-i18n="cta.store">Coming soon to Microsoft Store</span></span>
+      <a class="btn ghost" href="#features" data-i18n="cta.explore">Explore the features</a>
+    </div>
+    <img class="shot" src="img/hero.png" alt="Nova Dock on the desktop" data-i18n-alt="hero.alt">
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow" data-i18n="feat.eyebrow">Everything you need</div>
+      <h2 data-i18n="feat.title">Packed with features, still effortless</h2>
+      <p class="sub" data-i18n="feat.sub">From a pixel-perfect look to genuinely useful tools — all in one dock.</p>
+    </div>
+    <div class="grid">
+      <article class="card reveal"><div class="ico" style="--c1:#6d8dff;--c2:#b07cff"><svg class="i"><use href="#i-palette"/></svg></div><h3 data-i18n="f1.t">Themes &amp; style</h3><p data-i18n="f1.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#f472b6;--c2:#fb923c"><svg class="i"><use href="#i-spark"/></svg></div><h3 data-i18n="f2.t">Smooth motion</h3><p data-i18n="f2.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#38bdf8;--c2:#6d8dff"><svg class="i"><use href="#i-hide"/></svg></div><h3 data-i18n="f3.t">Smart auto-hide</h3><p data-i18n="f3.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#34d399;--c2:#22d3ee"><svg class="i"><use href="#i-eye"/></svg></div><h3 data-i18n="f4.t">Live window previews</h3><p data-i18n="f4.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#a78bfa;--c2:#f472b6"><svg class="i"><use href="#i-widgets"/></svg></div><h3 data-i18n="f5.t">Live widgets</h3><p data-i18n="f5.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#fbbf24;--c2:#fb923c"><svg class="i"><use href="#i-folder"/></svg></div><h3 data-i18n="f6.t">Folder fans &amp; stacks</h3><p data-i18n="f6.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#60a5fa;--c2:#34d399"><svg class="i"><use href="#i-recent"/></svg></div><h3 data-i18n="f7.t">Recent files</h3><p data-i18n="f7.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#c084fc;--c2:#6d8dff"><svg class="i"><use href="#i-layers"/></svg></div><h3 data-i18n="f8.t">Groups</h3><p data-i18n="f8.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#22d3ee;--c2:#6d8dff"><svg class="i"><use href="#i-dots"/></svg></div><h3 data-i18n="f9.t">All Programs launcher</h3><p data-i18n="f9.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#fb7185;--c2:#c084fc"><svg class="i"><use href="#i-docks"/></svg></div><h3 data-i18n="f10.t">Docks, tabs &amp; profiles</h3><p data-i18n="f10.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#f87171;--c2:#fbbf24"><svg class="i"><use href="#i-bell"/></svg></div><h3 data-i18n="f11.t">Badges &amp; indicators</h3><p data-i18n="f11.d"></p></article>
+      <article class="card reveal"><div class="ico" style="--c1:#2dd4bf;--c2:#60a5fa"><svg class="i"><use href="#i-cloud"/></svg></div><h3 data-i18n="f12.t">Backup &amp; portable</h3><p data-i18n="f12.d"></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap split reveal">
+    <div class="text">
+      <div class="eyebrow" data-i18n="s1.eyebrow">All Programs</div>
+      <h2 data-i18n="s1.title">Every program, one click away</h2>
+      <p data-i18n="s1.p"></p>
+      <ul class="ticks">
+        <li data-i18n="s1.l1"></li>
+        <li data-i18n="s1.l2"></li>
+        <li data-i18n="s1.l3"></li>
+      </ul>
+    </div>
+    <img class="shot" src="img/launcher.png" alt="The All Programs launcher" data-i18n-alt="s1.alt" loading="lazy">
+  </div>
+</section>
+
+<section>
+  <div class="wrap split rev reveal">
+    <div class="text">
+      <div class="eyebrow" data-i18n="s2.eyebrow">Folders</div>
+      <h2 data-i18n="s2.title">Folders that fan out</h2>
+      <p data-i18n="s2.p"></p>
+      <ul class="ticks">
+        <li data-i18n="s2.l1"></li>
+        <li data-i18n="s2.l2"></li>
+        <li data-i18n="s2.l3"></li>
+      </ul>
+    </div>
+    <img class="shot" src="img/fan.png" alt="A folder fanning out above the dock" data-i18n-alt="s2.alt" loading="lazy">
+  </div>
+</section>
+
+<section class="band" id="widgets">
+  <div class="wrap">
+    <div class="center reveal">
+      <div class="eyebrow" data-i18n="s3.eyebrow">Widgets</div>
+      <h2 data-i18n="s3.title">Widgets that actually help</h2>
+      <p class="sub" data-i18n="s3.sub"></p>
+    </div>
+    <img class="shot reveal" style="margin:44px auto 0;max-width:900px" src="img/widgets.png" alt="Dock widgets" data-i18n-alt="s3.alt" loading="lazy">
+    <div class="gallery">
+      <figure class="reveal"><img class="shot" src="img/timer.png" alt="" loading="lazy"><figcaption data-i18n="g1"></figcaption></figure>
+      <figure class="reveal"><img class="shot" src="img/weather.png" alt="" loading="lazy"><figcaption data-i18n="g2"></figcaption></figure>
+      <figure class="reveal"><img class="shot" src="img/worldclock.png" alt="" loading="lazy"><figcaption data-i18n="g3"></figcaption></figure>
+      <figure class="reveal"><img class="shot" src="img/notes.png" alt="" loading="lazy"><figcaption data-i18n="g4"></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split reveal">
+    <div class="text">
+      <div class="eyebrow" data-i18n="s4.eyebrow">Themes</div>
+      <h2 data-i18n="s4.title">Make it yours</h2>
+      <p data-i18n="s4.p"></p>
+      <ul class="ticks">
+        <li data-i18n="s4.l1"></li>
+        <li data-i18n="s4.l2"></li>
+        <li data-i18n="s4.l3"></li>
+      </ul>
+    </div>
+    <img class="shot" src="img/themes.png" alt="Nova Dock themes" data-i18n-alt="s4.alt" loading="lazy">
+  </div>
+</section>
+
+<section class="final" id="get">
+  <div class="wrap">
+    <div class="box reveal">
+      <img src="img/icon.png" alt="" width="84" height="84" style="margin:0 auto 22px;border-radius:20px">
+      <h2 data-i18n="fin.title">Ready to give your desktop a new look?</h2>
+      <p class="sub" style="margin:0 auto 28px" data-i18n="fin.sub">Nova Dock is on its way to the Microsoft Store.</p>
+      <span class="btn soon" aria-disabled="true"><svg class="i"><use href="#i-windows"/></svg><span data-i18n="cta.store">Coming soon to Microsoft Store</span></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© <span id="year">2026</span> Nova Dock</p>
+    <p data-i18n="foot.text"></p>
+  </div>
+</footer>
+
+<script src="js/lang-en.js"></script>
+<script src="js/lang-bg.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
