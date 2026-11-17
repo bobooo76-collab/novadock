@@ -12,6 +12,12 @@ window.I18N.en = {
   "hero.lead": "Nova Dock is a fast, beautiful and endlessly customizable dock for Windows. Launch apps, glance at live widgets, preview windows and keep everything organized — with smooth animations and a style that is entirely yours.",
   "cta.store": "Coming soon to Microsoft Store",
   "cta.explore": "Explore the features",
+  "p1.t": "No lag",
+  "p1.d": "Light on resources and smooth on every screen. No stutter, no waiting.",
+  "p2.t": "Nothing gets lost",
+  "p2.d": "Your icons, shortcuts and paths stay exactly where you put them — with automatic backups and crash recovery.",
+  "p3.t": "The best dock for Windows",
+  "p3.d": "Fast, polished and entirely yours — built to be the dock you never want to replace.",
   "hero.alt": "Nova Dock on the desktop",
 
   "feat.eyebrow": "Everything you need",

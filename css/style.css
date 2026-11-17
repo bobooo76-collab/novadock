@@ -124,7 +124,7 @@ nav.top .wrap { display: flex; align-items: center; justify-content: space-betwe
 }
 .lang button.on { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; }
 
-.hero { text-align: center; padding: 84px 0 40px; }
+.hero { text-align: center; padding: 18px 0 40px; }
 
 .chips { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
 .chip {
@@ -241,7 +241,7 @@ footer { border-top: 1px solid var(--card-border); padding: 34px 0 44px; color: 
   .split, .split.rev { grid-template-columns: 1fr; gap: 32px; }
   .split.rev .text { order: 0; }
   section { padding: 60px 0; }
-  .hero { padding-top: 56px; }
+  .hero { padding-top: 14px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -262,3 +262,6 @@ footer { border-top: 1px solid var(--card-border); padding: 34px 0 44px; color: 
 .legal a, footer a { color: inherit; text-decoration: underline; }
 .legal .upd { font-size: 14px; }
 html[lang="bg"] .l-en, html:not([lang="bg"]) .l-bg { display: none; }
+
+.promise { padding: 0 0 20px; }
+.promise .grid { margin-top: 0; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
