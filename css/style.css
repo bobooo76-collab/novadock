@@ -250,3 +250,15 @@ footer { border-top: 1px solid var(--card-border); padding: 34px 0 44px; color: 
   .trail { display: none; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+.legal { padding: 64px 0 80px; position: relative; }
+.legal .wrap { max-width: 760px; }
+.legal h1 { font-size: clamp(32px, 5vw, 44px); margin: 0 0 6px; }
+.legal h2 { font-size: 20px; margin: 34px 0 8px; }
+.legal p, .legal li { color: var(--dim); line-height: 1.7; }
+.legal ul { padding-left: 20px; }
+.legal li { margin-bottom: 10px; }
+.legal strong { color: inherit; }
+.legal a, footer a { color: inherit; text-decoration: underline; }
+.legal .upd { font-size: 14px; }
+html[lang="bg"] .l-en, html:not([lang="bg"]) .l-bg { display: none; }

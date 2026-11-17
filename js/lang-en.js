@@ -163,5 +163,7 @@ window.I18N.en = {
   "fin.title": "Ready to give your desktop a new look?",
   "fin.sub": "Nova Dock is on its way to the Microsoft Store.",
 
-  "foot.text": "Nova Dock is a Windows application. Windows and Microsoft Store are trademarks of Microsoft Corporation. All product names shown in screenshots belong to their respective owners."
+  "foot.text": "Nova Dock is a Windows application. Windows and Microsoft Store are trademarks of Microsoft Corporation. All product names shown in screenshots belong to their respective owners.",
+  "legal.home": "Home",
+  "foot.privacy": "Privacy Policy"
 };

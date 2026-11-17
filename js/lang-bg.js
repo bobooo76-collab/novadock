@@ -163,5 +163,7 @@ window.I18N.bg = {
   "fin.title": "Готов ли си да освежиш работния си плот?",
   "fin.sub": "Nova Dock скоро идва в Microsoft Store.",
 
-  "foot.text": "Nova Dock е приложение за Windows. Windows и Microsoft Store са търговски марки на Microsoft Corporation. Всички имена на продукти в снимките принадлежат на съответните си собственици."
+  "foot.text": "Nova Dock е приложение за Windows. Windows и Microsoft Store са търговски марки на Microsoft Corporation. Всички имена на продукти в снимките принадлежат на съответните си собственици.",
+  "legal.home": "Начало",
+  "foot.privacy": "Политика за поверителност"
 };
