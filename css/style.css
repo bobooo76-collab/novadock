@@ -291,3 +291,6 @@ html[lang="bg"] .guide .l-en, html:not([lang="bg"]) .guide .l-bg { display: none
 .guide li .shot { max-width: 380px; }
 .guide img.shot[src="img/dock.png"] { width: 100%; max-width: none; }
 .guide li img.shot[src="img/shapes.png"] { width: 100%; max-width: none; }
+.toc a { padding: 6px 12px; margin-left: -12px; border-radius: 10px; transition: background .2s, color .2s; }
+.toc a.on { background: rgba(109, 141, 255, 0.18); color: var(--text); font-weight: 600; box-shadow: inset 3px 0 0 var(--accent); }
+@media (max-width: 880px) { .toc a { margin-left: 0; } }
