@@ -309,7 +309,7 @@ html[lang="bg"] .l-en, html:not([lang="bg"]) .l-bg { display: none; }
 .guide .shot { display: block; max-width: 100%; height: auto; margin: 16px 0; }
 .guide-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
 .guide .l-bg.guide-layout, html[lang="bg"] .guide .guide-layout { display: grid; }
-.toc { position: sticky; top: 84px; align-self: start; display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
+.toc { position: sticky; top: 100px; align-self: start; display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
 .toc a { text-decoration: none; color: var(--dim); }
 .toc a:hover { color: var(--text); }
 html[lang="bg"] .guide .l-en, html:not([lang="bg"]) .guide .l-bg { display: none; }
