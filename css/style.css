@@ -321,3 +321,4 @@ html[lang="bg"] .guide .l-en, html:not([lang="bg"]) .guide .l-bg { display: none
 .toc a { padding: 6px 12px; margin-left: -12px; border-radius: 10px; transition: background .2s, color .2s; }
 .toc a.on { background: rgba(109, 141, 255, 0.18); color: var(--text); font-weight: 600; box-shadow: inset 3px 0 0 var(--accent); }
 @media (max-width: 880px) { .toc a { margin-left: 0; } }
+.gallery .stack { display: flex; flex-direction: column; gap: 28px; }
