@@ -133,6 +133,7 @@ window.I18N.en = {
   "g2": "Weather with a 7-day forecast",
   "g3": "World clocks for every time zone",
   "g4": "Quick notes that save themselves",
+  "g5": "Calendar with events, repeats and reminders",
 
   "s10.eyebrow": "Clipboard",
   "s10.title": "Everything you copied, one click away",
