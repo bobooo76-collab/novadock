@@ -30,11 +30,136 @@
 <main class="guide">
   <div class="wrap">
 
-    <article class="l-en">
-      <h1>User Guide</h1>
-      <p>The English version of the guide is coming soon. Switch to <strong>BG</strong> (top right) to read the Bulgarian version.</p>
-      <p>Questions? <a href="mailto:bonev.apps.sup@gmail.com">bonev.apps.sup@gmail.com</a></p>
-    </article>
+    <div class="l-en guide-layout">
+
+      <aside class="toc" aria-label="Contents">
+        <strong>Contents</strong>
+        <a href="#start-en">1. Getting started</a>
+        <a href="#add-en">2. Adding to the dock</a>
+        <a href="#widgets-en">3. Widgets</a>
+        <a href="#look-en">4. Look and themes</a>
+        <a href="#behavior-en">5. Behavior</a>
+        <a href="#backup-en">6. Settings and backup</a>
+        <a href="#faq-en">7. FAQ</a>
+        <a href="#contact-en">8. Contact</a>
+      </aside>
+
+      <article class="guide-body">
+        <h1>User Guide</h1>
+        <p class="intro">A short guide to Nova Dock. Almost everything is done with a right-click on the dock.</p>
+
+        <h2 id="start-en">1. Getting started</h2>
+        <img class="shot" src="img/dock.png" alt="Nova Dock on the desktop" loading="lazy">
+        <p>After installation the dock appears at the bottom of the screen with a few ready-made icons. Nothing else is needed: move the mouse over the icons to magnify them, and click to start a program.</p>
+        <ul>
+          <li><strong>Right-click</strong> the dock (or an empty spot in it) to open the main menu: add items, themes, settings, exit.</li>
+          <li><strong>Settings</strong> — right-click the dock → <em>Settings…</em>.</li>
+          <li><strong>Exit</strong> — right-click → <em>Exit</em>. This closes the dock completely.</li>
+          <li><strong>Start with Windows</strong> — turn it on in <em>Settings → General</em>.</li>
+          <li><strong>Hotkeys</strong> for hiding/showing docks and for opening the settings can be set in <em>Settings → Behavior</em>. None are set by default.</li>
+        </ul>
+
+        <h2 id="add-en">2. Adding to the dock</h2>
+        <p>Right-click the dock → <em>Add to the dock</em>. You can add:</p>
+        <ul>
+          <li><strong>Application from the list</strong> — pick from everything installed on the computer.</li>
+          <li><strong>File (.exe, .lnk)</strong> — a program or a shortcut.</li>
+          <li><strong>Folder</strong> — opens in Explorer, or as a stack (fan or grid) of the latest files. There are also <em>ready-made folders</em>.</li>
+          <li><strong>Separator</strong> — a thin line between groups of icons.</li>
+          <li><strong>Container (group)</strong> — one icon that opens several apps or files.</li>
+          <li><strong>“All programs” button</strong> — a list of everything installed.</li>
+          <li><strong>Widget</strong> — see the next section.</li>
+        </ul>
+        <p>You can also <strong>drag</strong> a file or program with the mouse straight onto the dock. Icons are rearranged by dragging, too.</p>
+        <p>Right-click an icon: <em>Rename</em>, <em>Change icon</em>, <em>Properties</em>, <em>Remove</em>. To avoid moving icons by accident, use <em>Lock icons</em> in the main menu.</p>
+        <p>Running programs show a glowing indicator in the dock. Hold the mouse over them to see a <strong>small window preview</strong>.</p>
+
+        <h2 id="widgets-en">3. Widgets</h2>
+        <img class="shot" src="img/gallery.png" alt="The Add widget window" loading="lazy">
+        <p>A widget is a live icon that shows information or opens a small window. Add them from <em>Add to the dock → Widget…</em>. In the window you choose where it goes — <strong>the dock</strong>, <strong>the desktop</strong> or <strong>the desktop panel</strong>. The green <strong>+</strong> adds, the red <strong>−</strong> removes. The green check shows how many times it has been added.</p>
+        <p>Right-click a widget to open its settings (<em>Widget settings…</em>).</p>
+
+        <h3>System</h3>
+        <ul>
+          <li><strong>Processor, Memory, Disks, Network</strong> — load, free space, network speed.</li>
+          <li><strong>Battery / Power</strong> — charge level and buttons for shut down, restart and sleep.</li>
+          <li><strong>Keyboard language</strong> — shows the current one and switches it when clicked.</li>
+          <li><strong>Virtual desktops</strong> — which desktop you are on and how many there are.</li>
+          <li><strong>Volume</strong> and <strong>Recycle Bin</strong>.</li>
+        </ul>
+
+        <h3>Time and organization</h3>
+        <ul>
+          <li><strong>Clock</strong> — time and date.</li>
+          <li><strong>Calendar</strong> — click to open the month. Add <strong>events</strong> with a time, a reminder and a repeat (weekly, monthly or yearly). Days with events are marked with a bar. The first day of the week is Automatic, Monday or Sunday.
+            <img class="shot" src="img/calendar.png" alt="The calendar with events" loading="lazy"></li>
+          <li><strong>Weather</strong> — a 7-day forecast for a city you choose. Search for the city by name in <em>Weather settings…</em>. The data comes from MET Norway, is free and needs no account.
+            <img class="shot" src="img/weather.png" alt="Weather forecast" loading="lazy"></li>
+          <li><strong>World clocks</strong> — several time zones at once.
+            <img class="shot" src="img/worldclock.png" alt="World clocks" loading="lazy"></li>
+          <li><strong>Work time</strong> — a work and rest timer. <strong>Timer</strong> — a countdown with an alarm.
+            <img class="shot" src="img/timer.png" alt="Timer" loading="lazy"></li>
+        </ul>
+
+        <h3>Notes and quick things</h3>
+        <ul>
+          <li><strong>Notes</strong> — colorful sticky notes.
+            <img class="shot" src="img/notes.png" alt="Notes" loading="lazy"></li>
+          <li><strong>Clipboard</strong> — the history of what you copied. Click a row to paste it again. It is kept only while the dock is running.
+            <img class="shot" src="img/clipboard.png" alt="Clipboard history" loading="lazy"></li>
+          <li><strong>Quick actions</strong> — buttons for common things (sound, night mode and more) and a screen <strong>brightness</strong> slider, if your computer supports it.
+            <img class="shot" src="img/quick.png" alt="Quick actions" loading="lazy"></li>
+          <li>There are also a photo frame, AI chats, games and more — see them in the Add widget window.</li>
+        </ul>
+
+        <h2 id="look-en">4. Look and themes</h2>
+        <img class="shot" src="img/themes.png" alt="Ready-made themes" loading="lazy">
+        <p>The fastest way is <em>Themes…</em> in the main menu: pick a ready-made theme and the dock changes at once. For more control, <em>Settings</em> has separate sections:</p>
+        <ul>
+          <li><strong>Position</strong> — top or bottom, which monitor, where along the width, and whether to reserve space so large windows do not cover the dock.</li>
+          <li><strong>Sizes</strong> — icon size and spacing.</li>
+          <li><strong>Background, Border, Shadow</strong> — color, transparency, gradient, blur, your own picture.</li>
+          <li><strong>Dock shape</strong> — rounded rectangle, capsule, a shelf at the screen edge or a 3D shelf.
+            <img class="shot" src="img/shapes.png" alt="Dock shapes" loading="lazy"></li>
+          <li><strong>Magnification and icon effects</strong> — how much icons grow under the mouse, reflections and more.</li>
+          <li><strong>Ambient effect</strong> — optionally <em>Snow</em>, <em>Rain</em> or <em>Stars</em> inside the dock. Off by default.</li>
+          <li><strong>Theme schedule</strong> — the dock changes its theme by itself at set times.</li>
+        </ul>
+
+        <h2 id="behavior-en">5. Behavior</h2>
+        <ul>
+          <li><strong>Hiding the dock</strong> — the dock can hide when you are not using it and come back when you move the mouse to the screen edge. You choose the animation and the delay.</li>
+          <li><strong>Several docks</strong> — <em>Docks → New dock with icons</em>. You can also have a <em>tab dock</em> (a group of tabs) or a <em>dock with bubbles</em>. Each dock has its own settings.</li>
+          <li><strong>Dock profiles</strong> — remember a whole set of settings and icons, for example “Work” and “Games”, and switch between them with one choice from the menu.</li>
+          <li><strong>Window previews</strong> and the <strong>name label</strong> can be turned off in the settings.</li>
+          <li><strong>Sounds</strong> — optional: when a program starts, when an icon is added or removed, and when a program asks for attention.</li>
+        </ul>
+
+        <h2 id="backup-en">6. Settings and backup</h2>
+        <ul>
+          <li>Everything you set up is stored on your computer in the <em>Data</em> folder next to the program. Nothing is sent to the internet.</li>
+          <li><strong>Backup</strong> — in <em>Settings → Backup</em> pick a folder (for example in OneDrive or Dropbox) and the settings are copied there.</li>
+          <li><strong>On another computer</strong> — copy the <em>Data</em> folder or restore the backup.</li>
+          <li><strong>Language</strong> — <em>Settings → Language</em>. The app comes in 12 languages, including Bulgarian, English, German, French, Spanish, Italian, Portuguese, Russian, Ukrainian, Polish, Romanian and Turkish.</li>
+          <li><strong>Version</strong> — <em>Settings → About</em>.</li>
+        </ul>
+
+        <h2 id="faq-en">7. FAQ</h2>
+        <h3>I cannot see the dock.</h3>
+        <p>It may be hidden by auto-hide — move the mouse to the screen edge. If you set a hotkey, press it. If nothing helps, start Nova Dock from the Start menu.</p>
+        <h3>A program icon is wrong or missing.</h3>
+        <p>Right-click it → <em>Refresh the icon</em> or <em>Change icon…</em>.</p>
+        <h3>The weather is not showing.</h3>
+        <p>Check your internet connection and that a city is chosen (right-click the widget → <em>Weather settings…</em>). The data refreshes about once an hour.</p>
+        <h3>How do I get everything back the way it was?</h3>
+        <p>Restore the backup or pick another theme from <em>Themes…</em>.</p>
+        <h3>Does the app crash?</h3>
+        <p>If Nova Dock crashes, it restarts by itself and tells you about it. Please write to us — see the next section.</p>
+
+        <h2 id="contact-en">8. Contact</h2>
+        <p>A question, a problem or an idea: <a href="mailto:bonev.apps.sup@gmail.com">bonev.apps.sup@gmail.com</a>. See also the <a href="privacy.html">privacy policy</a>.</p>
+      </article>
+    </div>
 
     <div class="l-bg guide-layout">
 

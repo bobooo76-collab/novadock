@@ -283,7 +283,6 @@ html[lang="bg"] .l-en, html:not([lang="bg"]) .l-bg { display: none; }
 .toc { position: sticky; top: 90px; align-self: start; display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
 .toc a { text-decoration: none; color: var(--dim); }
 .toc a:hover { color: var(--text); }
-.guide .l-en { max-width: 760px; }
 html[lang="bg"] .guide .l-en, html:not([lang="bg"]) .guide .l-bg { display: none; }
 @media (max-width: 880px) {
   .guide-layout { grid-template-columns: 1fr; gap: 20px; }
