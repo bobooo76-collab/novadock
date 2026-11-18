@@ -4,6 +4,7 @@ window.I18N.bg = {
   "nav.features": "Функции",
   "nav.widgets": "Уиджети",
   "nav.get": "Сваляне",
+  "nav.guide": "Ръководство",
 
   "hero.chip1": "Windows 10 и 11",
   "hero.chip2": "Лек и бърз",

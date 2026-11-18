@@ -4,6 +4,7 @@ window.I18N.en = {
   "nav.features": "Features",
   "nav.widgets": "Widgets",
   "nav.get": "Get it",
+  "nav.guide": "Guide",
 
   "hero.chip1": "Windows 10 & 11",
   "hero.chip2": "Light & fast",
