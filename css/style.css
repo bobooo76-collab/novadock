@@ -290,3 +290,4 @@ html[lang="bg"] .guide .l-en, html:not([lang="bg"]) .guide .l-bg { display: none
 }
 .guide li .shot { max-width: 380px; }
 .guide img.shot[src="img/dock.png"] { width: 100%; max-width: none; }
+.guide li img.shot[src="img/shapes.png"] { width: 100%; max-width: none; }
