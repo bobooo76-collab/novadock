@@ -289,3 +289,4 @@ html[lang="bg"] .guide .l-en, html:not([lang="bg"]) .guide .l-bg { display: none
   .toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px 14px; }
 }
 .guide li .shot { max-width: 380px; }
+.guide img.shot[src="img/dock.png"] { width: 100%; max-width: none; }
