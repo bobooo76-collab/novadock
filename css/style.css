@@ -265,3 +265,28 @@ html[lang="bg"] .l-en, html:not([lang="bg"]) .l-bg { display: none; }
 
 .promise { padding: 0 0 20px; }
 .promise .grid { margin-top: 0; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+.guide { padding: 64px 0 80px; position: relative; }
+.guide h1 { font-size: clamp(32px, 5vw, 44px); margin: 0 0 6px; }
+.guide h2 { font-size: 24px; margin: 48px 0 12px; scroll-margin-top: 90px; }
+.guide h3 { font-size: 17px; margin: 26px 0 6px; }
+.guide p, .guide li { color: var(--dim); line-height: 1.7; }
+.guide ul { padding-left: 20px; }
+.guide li { margin-bottom: 10px; }
+.guide strong { color: var(--text); }
+.guide em { color: var(--text); font-style: normal; }
+.guide a { color: inherit; text-decoration: underline; }
+.guide .intro { font-size: 18px; }
+.guide .shot { display: block; max-width: 100%; height: auto; margin: 16px 0; }
+.guide-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; }
+.guide .l-bg.guide-layout, html[lang="bg"] .guide .guide-layout { display: grid; }
+.toc { position: sticky; top: 90px; align-self: start; display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
+.toc a { text-decoration: none; color: var(--dim); }
+.toc a:hover { color: var(--text); }
+.guide .l-en { max-width: 760px; }
+html[lang="bg"] .guide .l-en, html:not([lang="bg"]) .guide .l-bg { display: none; }
+@media (max-width: 880px) {
+  .guide-layout { grid-template-columns: 1fr; gap: 20px; }
+  .toc { position: static; flex-direction: row; flex-wrap: wrap; gap: 6px 14px; }
+}
+.guide li .shot { max-width: 380px; }
